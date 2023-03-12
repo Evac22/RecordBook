@@ -1,11 +1,11 @@
-// Определение конструкторов и методов класса RecordBook
+// Defining constructors and methods of the RecordBook class
 #include "pch.h"
 #include <iostream>
 #include "RecordBook.h"
 
 using namespace std;
 
-// Конструкторы
+// Constructors
 RecordBook::RecordBook() {}
 RecordBook::RecordBook(string lname, string sid)
 {
@@ -13,7 +13,7 @@ RecordBook::RecordBook(string lname, string sid)
     studentId = sid;
 }
 
-// Метод для ввода данных о студенте
+// Method for entering student data
 void RecordBook::init()
 {
     cout << "Enter the student's last name: ";
@@ -22,20 +22,20 @@ void RecordBook::init()
     getline(cin, studentId);
 }
 
-// Метод для вывода данных о студенте
+// Method for displaying student data
 void RecordBook::display()
 {
     cout << "Student's last name: " << lastName << endl;
     cout << "Book number: " << studentId << endl;
 }
 
-// Метод для добавления предмета и оценки
+// Method for adding subject and rating
 void RecordBook::addSubject(string subject, int mark)
 {
     subjects[subject] = mark;
 }
 
-// Метод для вывода предметов и оценок, оценка выше minMark
+// Method for displaying items and grades, the grade is higher than minMark
 void RecordBook::displaySubjects(int minMark) const
 {
     for (auto const& [subject, mark] : subjects)
@@ -47,7 +47,7 @@ void RecordBook::displaySubjects(int minMark) const
     }
 }
 
-// Метод для вычисления средней оценки по всем предметам
+// Method for calculating the average grade for all subjects
 double RecordBook::calculateAverageMark() const
 {
     double sum = 0.0;
@@ -58,13 +58,13 @@ double RecordBook::calculateAverageMark() const
     return (subjects.empty() ? 0.0 : sum / subjects.size());
 }
 
-// Метод для получения фамилии студента
+// Method for getting the student's last name
 string RecordBook::getLastName() const
 {
     return lastName;
 }
 
-// Метод для получения номера книжки студента
+// Method for getting the student's book number
 string RecordBook::getStudentId() const
 {
     return studentId;
