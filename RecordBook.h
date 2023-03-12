@@ -1,4 +1,4 @@
-// Защита от множественного включения заголовочного файла 
+// Protection against multiple header file inclusion
 #ifndef RECORDBOOK_H
 #define RECORDBOOK_H
 
@@ -8,21 +8,21 @@
 class RecordBook
 {
 private:
-    std::string lastName;// Фамилия студента
-    std::string studentId;// Номер зачетной книжки студента
-    std::map<std::string, int> subjects; // Массив предметов и оценок
+    std::string lastName;// Student last name
+    std::string studentId;// Student's record book number
+    std::map<std::string, int> subjects;// Array of items and grades
 
 
 public:
-    RecordBook();// Конструктор по умолчанию
-    RecordBook(std::string lname, std::string sid);// Конструктор с параметрами
-    void init();// Инициализация фамилии и номера зачетной книжки студента
-    void display();// Вывод информации о студенте и его успеваемости
-    void addSubject(std::string subject, int mark);; // Добавление предмета и оценки
-    void displaySubjects(int minMark) const;// Вывод списка предметов и оценок выше заданного порога
-    double calculateAverageMark() const;// Расчет среднего балла студента
-    std::string getLastName() const;// Получение фамилии студента
-    std::string getStudentId() const; // Получение номера зачетной книжки студента
+    RecordBook();// Default constructor
+    RecordBook(std::string lname, std::string sid);// Constructor with parameters
+    void init();// Initialization of the student's last name and record book number
+    void display();// Output information about the student and his progress
+    void addSubject(std::string subject, int mark); // Add subject and grade
+    void displaySubjects(int minMark) const;// Output a list of subjects and grades above a given threshold
+    double calculateAverageMark() const;//Calculation of a student's GPA
+    std::string getLastName() const;// Get the student's last name
+    std::string getStudentId() const; // Get the student's gradebook number
 };
 
 #endif // RECORDBOOK_H
